@@ -50,6 +50,20 @@ func (gc *GradeCalculator) GetFinalGrade() string {
 	return "F"
 }
 
+func (gc *GradeCalculator) GetPassFail() string {
+	final := gc.GetFinalGrade()
+	switch final {
+	case "A":
+		return "Pass"
+	case "B":
+		return "Pass"
+	case "C":
+		return "Pass"
+	default:
+		return "Fail"
+	}
+}
+
 func (gc *GradeCalculator) AddGrade(name string, grade int, gradeType GradeType) {
 	gc.grades = append(gc.grades, Grade{
 		Name:  name,
